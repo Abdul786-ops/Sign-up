@@ -4,139 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Seller Signup Form</title>
-
-  <style type="text/css">
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; }
-
-    .main-container {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: row;
-    }
-
-    .image-section {
-      flex: 0.8;
-      background-image: url('1.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .form-section {
-      flex: 1;
-      background-color: #fff;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .form-section h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
-      color: #000;
-    }
-
-    .form-section p {
-      margin-bottom: 40px;
-      font-size: 18px;
-      color: #555;
-      max-width: 480px;
-    }
-
-    form {
-      width: 100%;
-      max-width: 650px;
-    }
-
-    .form-group {
-      margin-bottom: 24px;
-      width: 100%;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 16px 14px;
-      border: 3px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      outline-offset: 2px;
-      outline-color: #e37e46;
-      box-sizing: border-box;
-    }
-
-    .submit-btn, .next-btn {
-      background-color: #e37e46;
-      color: white;
-      padding: 16px;
-      font-size: 18px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .footer-text {
-      text-align: left;
-      margin-top: 30px;
-      font-size: 16px;
-      max-width: 480px;
-    }
-
-    .footer-text a {
-      color: #e37e46;
-      text-decoration: none;
-    }
-
-    /* Mobile styles */
-
-     @media (max-width: 767px) {
-      form {
-        width: 100%;
-        max-width: 100%;
-        }
-      }
-
-    @media (max-width: 767px) {
-      .main-container {
-        flex-direction: column;
-      }
-
-      .image-section {
-        display: none;
-      }
-
-      .form-section {
-        padding: 30px 20px;
-        align-items: center;
-        text-align: center;
-      }
-
-      .form-section h1 {
-        font-size: 28px;
-      }
-
-      .form-section p {
-        font-size: 16px;
-        margin-bottom: 30px;
-      }
-
-      form {
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .footer-text {
-        text-align: center;
-        max-width: 100%;
-      }
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css">
   <script>
     function showStep(step) {
       document.getElementById('step1').style.display = step === 1 ? 'block' : 'none';
@@ -145,14 +13,13 @@
 
     function validateStep1() {
       showStep(2);
-      return true;
     }
 
     function validateForm(event) {
       return true;
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       document.querySelector('form').addEventListener('submit', validateForm);
     });
   </script>
@@ -164,22 +31,28 @@
     <div class="form-section">
       <h1>Start selling on ShopNest today</h1>
       <p>Get personalized business support and a ready-to-use e-commerce platform — only on ShopNest!</p>
+      
       <form action="#" method="post" enctype="multipart/form-data">
         <div id="step1">
           <div class="form-group">
-            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+            <input type="text" name="fullName" placeholder="Enter your full name" required />
           </div>
 
           <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="email" name="email" placeholder="Enter your email" required />
           </div>
 
           <div class="form-group">
-            <input type="text" id="countryCode" name="countryCode" placeholder="e.g. +92" required>
+            <input type="text" name="countryCode" placeholder="e.g. +92" required />
           </div>
 
           <div class="form-group">
-            <input type="tel" id="phone" name="phone" placeholder="300 0000000" required>
+            <input type="tel" name="phone" placeholder="300 0000000" required />
+          </div>
+
+         <div class="checkbox-group">
+            <input type="checkbox" id="marketing" name="marketing" checked />
+            <label for="marketing">I would like to receive news, tips, and marketing offers from Alibaba.com.</label>
           </div>
 
           <button type="button" class="next-btn" onclick="validateStep1()">Next</button>
@@ -187,26 +60,32 @@
 
         <div id="step2" style="display: none;">
           <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Enter password" minlength="6" required>
+            <input type="password" name="password" placeholder="Enter password" minlength="6" required />
           </div>
 
           <div class="form-group">
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm password" required />
           </div>
 
           <div class="form-group">
-            <input type="file" id="logo" name="logo" accept="image/*">
+            <input type="file" name="logo" accept="image/*" />
           </div>
 
           <div class="form-group">
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Enter WhatsApp number">
+            <input type="tel" name="whatsapp" placeholder="Enter WhatsApp number" />
+          </div>
+
+           <div class="checkbox-group">
+            <input type="checkbox" id="marketing" name="marketing" checked />
+            <label for="marketing">I would like to receive news, tips, and marketing offers from Alibaba.com.</label>
           </div>
 
           <button type="submit" class="submit-btn">Submit</button>
         </div>
       </form>
-      <div class="footer-text">
-        Already have an account? <a href="#">Sign In</a>
+
+      <div class="form-footer">
+        By click submit, you agree with our <a href="#"><u>Terms & Conditions</u></a>.
       </div>
     </div>
   </div>
